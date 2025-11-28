@@ -1,0 +1,26 @@
+
+@keyframes globeAnimKey {
+  0%   {left: 1080px; right: 0px; top: 0px; bottom: 400px;}
+  50%  {left: 0px; right: 300px; top: 0px; bottom: 200px;}
+  85% {left: 0px; right: 130px; top: 0px; bottom: 200px;}
+  95% {left: 20px; right: 0px; top: 70px; bottom: 0px;}
+  100% {left: 0px; right: 0px; top: 0px; bottom: 0px;}
+}
+
+/* Anims up top-----------------------------------------------------------------------------------*/
+
+body{
+    background-color: #0a0016;
+}
+
+
+
+globeAnimSection{
+
+  align-items: center;
+  position: relative;
+  animation-name: globeAnimKey;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+
+}
