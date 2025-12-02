@@ -125,6 +125,19 @@ a:hover {
     padding: 15px 40px;
     background-color: var(--bg-dark-A);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+    transform: translateY(-100%);
+    transition: transform 0.4s ease; /* smooth transition */
+    z-index: 1000;
+}
+
+/* Show nav */
+#top-nav.visible {
+  transform: translateY(0);
+}
+
+#top-nav.hidden {
+  transform: translateY(-100%);
 }
 
 .logo {
