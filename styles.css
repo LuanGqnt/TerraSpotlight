@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+/*
+====================================
+1. GLOBAL STYLES & ALTERNATING COLORS
+====================================
+*/
+
+:root {
+    /* Accent Colors */
+    --primary-color: #48bb78; /* Vibrant Earthy Green (Accent) */
+    --accent-color: #48bb78; /* Used for hover/CTA/link highlights */
+    
+    /* Alternating Background Colors */
+    --bg-dark-A: #1A202C; /* Deep Dark (Odd sections: Landing, Disasters, Contact) */
+    --bg-dark-B: #2D3748; /* Slightly lighter Dark (Even sections: Weather, Guides) */
+
+    /* General Colors */
+    --bg-card: #374151; /* Mid-dark Card Background for content boxes */
+    --text-light: #f7fafc; /* Near White Text */
+    --text-muted: #a0aec0; /* Gray for subtle text */
+    --border-dark: #4a5568; /* Subtle Border */
+    --shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.4);
+    --border-radius: 8px;
+
+    --text-glow-color: #f2f2f2; /* Primary green for text light-up */
+}
+
+.light-mode {
+    /* Accent Colors (Keep Primary/Accent the same deep green for consistency) */
+    --primary-color: #38A169;
+    --accent-color: #38A169; 
+    
+    /* Alternating Backgrounds */
+    --bg-dark-A: var(--bg-light-A); /* Now used for odd sections */
+    --bg-dark-B: var(--bg-light-B); /* Now used for even sections */
+    --bg-light-A: #F7FAFC;
+    --bg-light-B: #EDF2F7;
+
+    /* General Colors */
+    --bg-card: #FFFFFF; /* Pure white cards */
+    --text-light: var(--text-dark); /* Main text is now dark */
+    --text-dark: #2D3748; 
+    --text-muted: #718096; /* Medium gray muted text */
+    
+    /* Borders and Shadows (Must also be light/subtle) */
+    --border-dark: #E2E8F0; /* Very light border */
+    --shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for lift */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--bg-dark-A); /* Base body matches BG-A */
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-light);
+}
+
+
+/*
+====================================
+2. NAVIGATION (Fixed Header)
+====================================
+*/
+
+#top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--bg-dark-A);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+#top-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#top-nav li a {
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#top-nav li a:hover {
+    color: var(--text-light);
+    background-color: var(--bg-card);
+}
+
+/*
+====================================
+3. FULL VIEWPORT SECTIONS (100vh)
+====================================
+*/
+
+.full-viewport {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Default stack, overridden for landing */
+    justify-content: center;
+    align-items: center;
+    padding: 100px 40px 40px; 
+    text-align: center;
+    position: relative;
+}
+
+/* Apply Alternating Backgrounds */
+.full-viewport:nth-of-type(odd) {
+    background-color: var(--bg-dark-A);
+}
+
+.full-viewport:nth-of-type(even) {
+    background-color: var(--bg-dark-B);
+}
+
+
+/* --- LANDING PAGE SPECIFIC LAYOUT (SIDE-BY-SIDE) --- */
+#landing-page {
+    /* Ensure content inside takes up the full space needed for side-by-side */
+    width: 100%; 
+    max-width: 1400px; /* Optional width limit */
+    
+    /* Flex settings for side-by-side */
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+    
+    padding: 0 50px; 
+    min-height: 100vh;
+}
+
+/* --- 1. Globe Container Styles (Desktop) --- */
+.globe-container {
+    /* Define size and width for desktop layout */
+    width: 45%; 
+    max-width: 500px; 
+    height: 500px;
+    
+    /* Ensure the container is spaced away from the text */
+    margin-right: 50px; 
+
+    flex-grow: 0; /* Important: prevents the globe from stretching too much */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Ensure these are NOT absolute/centered for the side-by-side layout */
+    position: static; 
+    transform: none; 
+
+    overflow: hidden; 
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(15, 19, 255, 0.4); 
+    z-index: 1; 
+}
+
+#global-anim-bg {
+    /* Make video fill its container */
+    position: static; /* Important: Overrides any other absolute positioning */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(0.8); 
+    top: auto;
+    left: auto;
+}
+
+
+/* --- 2. Landing Content Styles --- */
+.landing-content {
+    /* Define width for the text block */
+    width: 45%; 
+    max-width: 500px; 
+    
+    flex-grow: 0;
+    text-align: left;
+    z-index: 2;
+    /* Removed redundant margin-left as margin-right on globe handles spacing */
+}
+
+#landing-page h1 {
+    font-size: 4.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.5em;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: var(--bg-dark-A); 
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+/* CONTENT SECTIONS GENERAL STYLES */
+.content-section {
+    padding-top: 100px; 
+}
+
+.content-section h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.single-column {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+}
+
+/* Guides */
+
+#guides .card li {
+    /* Ensure the list item text color is the target for the shadow */
+    color: var(--text-light); 
+    transform: translateX(0);
+    transition: text-shadow 0.2s ease, color 0.2s ease, transform 0.3s ease;
+}
+
+#guides .card li:hover {
+    /* 1. Makes the text bright white for maximum contrast */
+    color: #ffffff; 
+    
+    /* 2. Applies the soft, accent green glow using text-shadow */
+    text-shadow: 0 0 5px var(--text-glow-color),
+                 0 0 10px rgba(72, 187, 120, 0.4); /* Second layer for a wider halo */
+    
+    /* Optional: Slight lift or movement for tactile feel */
+    transform: translateX(7px);
+}
+
+/* Card Styling (Minimalistic) */
+.card {
+    background-color: var(--bg-card);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-dark);
+    border: 1px solid var(--border-dark);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-dark);
+    padding-bottom: 5px;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card li {
+    padding: 8px 0;
+    font-size: 1em;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(74, 85, 104, 0.5);
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+/* CONTACT CARD */
+.contact-card p {
+    margin-top: 15px;
+    font-size: 1em;
+    color: var(--text-light);
+}
+
+.contact-details {
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.contact-details .card {
+    margin: 10px;
+}
+
+.contact-details .card .author {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.our-developers {
+    font-size: 2em !important;
+    color: white !important;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/*
+====================================
+4. DISASTER CONTENT SECTION STYLES
+====================================
+*/
+
+.disaster-container {
+    display: flex;
+    flex-direction: column; 
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-dark);
+    padding: 30px;
+}
+
+@media (min-width: 900px) {
+    .disaster-container {
+        flex-direction: row; 
+        align-items: flex-start;
+        min-height: 450px; 
+    }
+}
+
+/* --- Disaster Navigation (Buttons) --- */
+.disaster-nav {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    padding-right: 20px;
+    min-width: 200px; 
+    margin-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+    .disaster-nav {
+        flex-direction: column; 
+        border-right: 1px solid var(--border-dark);
+        margin-bottom: 0;
+    }
+}
+
+.disaster-btn {
+    flex-grow: 1; 
+    text-align: left;
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    cursor: pointer;
+    padding: 12px 15px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, border-left 0.3s;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+@media (min-width: 900px) {
+    .disaster-btn {
+        margin: 5px 0;
+        border-left: 3px solid transparent; 
+    }
+}
+
+.disaster-btn:hover {
+    color: var(--text-light);
+    background-color: rgba(74, 85, 104, 0.3); 
+}
+
+.disaster-btn.active {
+    color: var(--primary-color);
+    background-color: var(--bg-dark-A);
+    font-weight: 700;
+}
+
+@media (min-width: 900px) {
+    .disaster-btn.active {
+        border-left-color: var(--primary-color);
+        color: var(--text-light);
+    }
+}
+
+
+/* --- Disaster Content Display --- */
+.disaster-display-wrapper {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.hazard-card {
+    display: none; 
+    padding-left: 20px;
+}
+
+.hazard-card.active-content {
+    display: block; 
+}
+
+.hazard-card h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.summary-text {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.key-facts {
+    list-style: none;
+    padding: 15px 0;
+    border-top: 1px solid var(--border-dark);
+}
+
+.key-facts li {
+    padding: 8px 0;
+    color: var(--text-light);
+    font-size: 1em;
+}
+
+.key-facts li::before {
+    content: '→';
+    color: var(--accent-color);
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.learn-more-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+
+/*
+====================================
+5. FOOTER
+====================================
+*/
+
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--bg-dark-B);
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+
+/*
+====================================
+6. MOBILE MEDIA QUERY (Must be last to override desktop styles)
+====================================
+*/
+@media (max-width: 900px) {
+    #landing-page {
+        flex-direction: column; /* Stacks vertically on smaller screens */
+        padding: 100px 20px 50px;
+        justify-content: center;
+        align-items: center; /* Center items in the column */
+    }
+
+    .globe-container, .landing-content {
+        /* Reset desktop width constraints */
+        width: 100%; 
+        max-width: 300px;
+        margin-right: 0;
+        margin-left: 0;
+        flex-grow: 0;
+    }
+    
+    .globe-container {
+        height: 300px;
+        margin-bottom: 40px;
+    }
+
+    .landing-content {
+        text-align: center; /* Center text when stacked */
+    }
+}
+
+
+/* LIGHT MODE */
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--bg-gradient-start);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+#theme-switch:hover {
+    cursor: pointer;
+}
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.light-mode #theme-switch svg:first-child {
+    display: none;
+}
+
+.light-mode #theme-switch svg:last-child {
+    display: block;
+}
+
+/*
+====================================
+7. TYPHOON GUIDE SPECIFIC STYLES
+====================================
+*/
+
+/* Ensure the full-viewport centering is disabled for detailed content pages */
+#typhoon-guide {
+    /* Reset full-viewport properties for content page */
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: block; /* Use standard block flow */
+}
+
+/* Three-column layout for the Before/During/After phases */
+.action-phases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.action-phases-grid h4 {
+    /* Make phase headings pop */
+    color: var(--primary-color);
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.action-phases-grid ul {
+    /* Standard list styling for action steps */
+    list-style: none; 
+    padding-left: 0;
+}
+
+.action-phases-grid li {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    padding: 6px 0;
+    
+    /* Using a custom bullet point for professionalism */
+    position: relative;
+    padding-left: 15px; 
+    border-bottom: none; /* Ensure no extra lines */
+}
+
+/* Custom bullet style */
+.action-phases-grid li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+
+/* Media query for mobile stacking */
+@media (max-width: 900px) {
+    .action-phases-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

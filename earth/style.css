@@ -15,10 +15,10 @@ body{
 
 
 
-globeAnimSection{
+#globeAnimSection{
 
   align-items: center;
-  position: relative;
+  position: absolute;
   animation-name: globeAnimKey;
   animation-duration: 4s;
   animation-iteration-count: 1;
