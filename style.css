@@ -1,26 +1,46 @@
 
 @keyframes globeAnimKey {
-  0%   {left: 1080px; right: 0px; top: 0px; bottom: 400px;}
-  50%  {left: 0px; right: 300px; top: 0px; bottom: 200px;}
-  85% {left: 0px; right: 130px; top: 0px; bottom: 200px;}
-  95% {left: 20px; right: 0px; top: 70px; bottom: 0px;}
-  100% {left: 0px; right: 0px; top: 0px; bottom: 0px;}
+  0% {transform: translate(-50%, -50%) translateX(-500px) translateY(253px) rotate(5deg) scaleX(1.4) scaleY(1.4) skewX(1deg) skewY(-28deg); opacity: 0;}
+  35% {transform: translate(-50%, -50%) translateX(48px) translateY(20px) rotate(10deg) scaleX(0.8) scaleY(0.8) skewX(1deg) skewY(0deg);opacity: 35;}
+  53% {transform: translate(-50%, -50%) translateX(-60px) translateY(-26px) rotate(5deg) scaleX(1) scaleY(1) skewX(4deg) skewY(3deg);opacity: 53;}
+  100% {transform: translate(-50%, -50%) translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);opacity: 100;}
+}
+
+@keyframes spotlightAnim {
+  0% {transform: translate(-50%, -50%) scaleX(0) scaleY(0.5); opacity: 0;}
+  100% {transform: translate(-50%, -50%) scaleX(1.2) scaleY(1.5);opacity: 50;}
 }
 
 /* Anims up top-----------------------------------------------------------------------------------*/
 
 body{
     background-color: #0a0016;
+    overflow-x: hidden;
+}
+
+#globeAnimDiv{
+  overflow-x: hidden;
+  animation-name: globeAnimKey;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  animation-fill-mode: forwards;
+  /*Anims up top--------------------------------*/
+  position: relative;     
+  top: 650px;            
+  left: 50%;    
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 
 
-globeAnimSection{
-
-  align-items: center;
-  position: relative;
-  animation-name: globeAnimKey;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
-
+#spotlight{
+  overflow-x: hidden;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+  opacity: 0%;
+  animation: spotlightAnim 1s ease-in-out 2.5s 1 forwards;
 }
