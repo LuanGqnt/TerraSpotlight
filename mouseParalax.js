@@ -18,8 +18,8 @@ function animate() {
     currentX += (targetX - currentX) * 0.1;
     currentY += (targetY - currentY) * 0.1;
 
-    Layer1.style.transform = `translate(${currentX * -0.005}px, ${currentY * -0.005}px)`;
-    Layer2.style.transform = `translate(${currentX * -0.005}px, ${currentY * -0.005}px)`;
+    Layer1.style.transform = `translate(${currentX * -0.007}px, ${currentY * -0.007}px)`;
+    Layer2.style.transform = `translate(${currentX * -0.003}px, ${currentY * -0.003}px)`;
     Layer3.style.transform = `translate(${currentX * -0.001}px, ${currentY * -0.001}px)`;
     Layer4.style.transform = `translate(${currentX * -0.00025}px, ${currentY * -0.00025}px)`;
 
