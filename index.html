@@ -25,21 +25,29 @@
         </ul>
     </nav>
 
-    <section id="landing-page" class="full-viewport">
-        <div class="globe-container">
-                <video autoplay loop muted playsinline id="global-anim-bg">
-                    <source src="./assets/globeAnim.webm" type="video/webm">
-                    Your browser does not support the video tag.
-                </video>
-        </div>
 
-        <div class="landing-content">
-            <h1>Terra Spotlight</h1>
-            <p class="tagline">Your real-time window into Philippine weather and natural events.</p>
-            <a href="#weather" class="cta-button">View Latest Updates</a>
+    <section id="landing-page" class="fullViewportLandingVer">
+         <div id="novaBG" >
+            <img src="assets/Lowest Image bg.png">
+         </div>
+        <div id="starsBGSmallDiv">
+            <video id="starsBGSmall" height="100vh" width="100vw" autoplay loop muted>
+                <source src="assets/starsBGFar.webm" type="video/webm">
+            </video>
+        </div>
+        <div id="globeAnimDiv">
+            <video id="globeAnim" height="400" width="712" autoplay muted>
+                <source src="assets/globeAnim.webm" type="video/webm">
+            </video>
+        </div>
+        <div id="spotlightDiv">
+            <img id="spotlight" src="assets/yellowGradientSpotlight.png" alt="A spotlight shining upon out wonderous earth." height="850" width="450">
         </div>
     </section>
 
+<section class="scroll-space"></section>
+
+<section id="trueBody">
     <section id="weather" class="content-section full-viewport">
         <h2>Weather Today (Batangas City)</h2>
         <div class="content-grid">
@@ -230,7 +238,7 @@
             </div>
         </div>
     </section>
-
+</section>
     <footer>
         <p>&copy; 2025 Terra Spotlight. All rights reserved.</p>
     </footer>
@@ -238,5 +246,7 @@
 
     <script src="app.js"></script>
     <script src="lightmode.js"></script>
+    <script src="mouseParalax.js"></script>
+
 </body>
 </html>
