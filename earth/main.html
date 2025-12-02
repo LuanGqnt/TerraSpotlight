@@ -2,21 +2,52 @@
 
 <html lang="eng">
     <header>
-        <title>Terra Spotlight</title>
-        <link rel="stylesheet" href="style.css">
-            <meta charset="UTF-8">
-            <meta name="description" content="Natural disaster information site">
-            <meta name="keywords" content="HTML, CSS">
-            <meta name="author" content="Qlychn, Laun, Fr0g">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <head>
+            <title>Terra Spotlight</title>
+            <link rel="stylesheet" href="style.css">
+                <meta charset="UTF-8">
+                <meta name="description" content="Natural disaster information site">
+                <meta name="keywords" content="HTML, CSS">
+                <meta name="author" content="Qlychn, Laun, Fr0g">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
     </header>
-    <body> 
 
-        <section id="globeAnimSection">
-            <video id="globeAnim" height="600" width="1067" autoplay>\
+    <body>
+        <!-- Bellow lies Qly's sanity (and the landing page too)-------------->
+         <div id="novaBG" >
+            <img src="assets/Lowest Image bg.png">
+         </div>
+        <div id="starsBGSmallDiv">
+            <video id="starsBGSmall" height="100vh" width="100vw" autoplay loop muted>
+                <source src="assets/starsBGFar.webm" type="video/webm">
+            </video>
+        </div>
+        <div id="globeAnimDiv">
+            <video id="globeAnim" height="400" width="712" autoplay muted>
                 <source src="assets/globeAnim.webm" type="video/webm">
             </video>
-        </section>
+        </div>
+        <div id="spotlightDiv">
+            <img id="spotlight" src="assets/yellowGradientSpotlight.png" alt="A spotlight shining upon out wonderous earth." height="850" width="450">
+        </div>
+
+
+        <div id="greetingTexts">
+            <div>Kumusta!</div>        <!-- Filipino/Tagalog -->
+            <div>Hola!</div>           <!-- Spanish -->
+            <div>Halo!</div>           <!-- Indonesian/Malay -->    
+            <div>Привет!</div>         <!-- Russian -->
+            <div>Olá!</div>            <!-- Portuguese -->
+            <div>Bonjour!</div>        <!-- French -->
+            <div>مرحبًا!</div>         <!-- Arabic -->
+            <div>नमस्ते!</div>         <!-- Hindi -->
+            <div id="actualWelcomeDiv">Welcome!</div>        <!-- English -->
+        </div>
+        
+        <!-- Above lies Qly's sanity (and the landing page too)-------------->
+
 
     </body>
+
 </html>
