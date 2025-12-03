@@ -37,37 +37,38 @@
 
 :root {
     /* Accent Colors */
-    --primary-color: #48bb78; /* Vibrant Earthy Green (Accent) */
-    --accent-color: #48bb78; /* Used for hover/CTA/link highlights */
+    --primary-color: #a195e5; /* Vibrant Earthy Green (Accent) */
+    --accent-color: #a195e5; /* Used for hover/CTA/link highlights */
     
     /* Alternating Background Colors */
-    --bg-dark-A: #1A202C; /* Deep Dark (Odd sections: Landing, Disasters, Contact) */
-    --bg-dark-B: #2D3748; /* Slightly lighter Dark (Even sections: Weather, Guides) */
+    --bg-dark-A: #10111f; /* Deep Dark (Odd sections: Landing, Disasters, Contact) */
+    --bg-dark-B: #22223a; /* Slightly lighter Dark (Even sections: Weather, Guides) */
 
     /* General Colors */
-    --bg-card: #374151; /* Mid-dark Card Background for content boxes */
-    --text-light: #f7fafc; /* Near White Text */
-    --text-muted: #a0aec0; /* Gray for subtle text */
+    --bg-card: #373751; /* Mid-dark Card Background for content boxes */
+    --text-light: #f5fff7; /* Near White Text */
+    --text-muted: #b0a7bd; /* Gray for subtle text */
     --border-dark: #4a5568; /* Subtle Border */
     --shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.4);
     --border-radius: 8px;
 
     --text-glow-color: #f2f2f2; /* Primary green for text light-up */
+    --SeperatorLine: #8700d4;
 }
 
 .light-mode {
     /* Accent Colors (Keep Primary/Accent the same deep green for consistency) */
-    --primary-color: #38A169;
-    --accent-color: #38A169; 
+    --primary-color: #a195e5;
+    --accent-color: #a195e5; 
     
     /* Alternating Backgrounds */
     --bg-dark-A: var(--bg-light-A); /* Now used for odd sections */
     --bg-dark-B: var(--bg-light-B); /* Now used for even sections */
-    --bg-light-A: #F7FAFC;
-    --bg-light-B: #EDF2F7;
+    --bg-light-A: #f5e7f8;
+    --bg-light-B: #fbeeff;
 
     /* General Colors */
-    --bg-card: #FFFFFF; /* Pure white cards */
+    --bg-card: #f4e8fa; /* Pure white cards */
     --text-light: var(--text-dark); /* Main text is now dark */
     --text-dark: #2D3748; 
     --text-muted: #718096; /* Medium gray muted text */
@@ -299,7 +300,7 @@ body{
 /* CUNT-ENT SECTIONS SEMI(?)-PARALAX []*/ /*Delete the cuss word I'm losing my sanity*/
 
 #weather{
-    outline: #38A169;
+    outline: var(--SeperatorLine);
     outline-width: 2px;
     outline-style: solid;
 }
@@ -416,7 +417,7 @@ body{
 
 .our-developers {
     font-size: 2em !important;
-    color: white !important;
+    color: var(--text-light) !important; /*--------------------------------------------------------------------------------------------------------------------*/
     text-align: center;
     margin-top: 30px;
 }
