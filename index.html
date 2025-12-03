@@ -18,10 +18,9 @@
         <ul>
             <li><a href="#landing-page">Home</a></li>
             <li><a href="#weather">Weather</a></li>
-            <li><a href="#alerts">Alerts</a></li>
-            <li><a href="#earthquake">Earthquake</a></li>
+            <li><a href="#disasters">Hazards</a></li>
             <li><a href="#guides">Safety</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
         </ul>
     </nav>
 
@@ -45,203 +44,204 @@
         </div>
     </section>
 
-<section class="scroll-space"></section>
+    <section class="scroll-space"></section>
 
-<section id="trueBody">
-    <section id="weather" class="content-section full-viewport">
-        <h2>Weather Today (Batangas City)</h2>
-        <div class="content-grid">
-            
-            <div class="card">
-                <h3>Current Conditions</h3>
-                <ul>
-                    <li><b>Temperature</b>: 31°C (Feels like 36°C)</li>
-                    <li><b>Humidity</b>: 75%</li>
-                    <li><b>Wind</b>: 15 km/h ENE</li>
-                    <li><b>Pressure</b>: 1010 hPa</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Forecast & Summary</h3>
-                <ul>
-                    <li><b>Sky</b>: Partly Cloudy</li>
-                    <li><b>Rain Chances</b>: Low (10%)</li>
-                    <li><b>Sunrise</b>: 5:58 AM</li>
-                    <li><b>Sunset</b>: 5:35 PM</li>
-                </ul>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="disasters" class="content-section full-viewport">
-        <h2>Hazard Information Center</h2>
-
-        <div class="disaster-container">
-            
-            <div class="disaster-nav">
-                <button class="disaster-btn active" data-hazard="heatwaves">Heat Waves</button>
-                <button class="disaster-btn" data-hazard="landslides">Landslides</button>
-                <button class="disaster-btn" data-hazard="typhoons">Typhoons</button>
-                <button class="disaster-btn" data-hazard="flooding">Flooding</button>
-                <button class="disaster-btn" data-hazard="tsunami">Tsunami</button>
-                <button class="disaster-btn" data-hazard="volcanic">Volcanic Activity</button>
-            </div>
-
-            <div class="disaster-display-wrapper">
+    <section id="content-container">
+        <section id="weather" class="content-section full-viewport">
+            <h2>Weather Today (Batangas City)</h2>
+            <div class="content-grid">
                 
-                <div id="hazard-content">
-                    
-                    <div id="heatwaves" class="hazard-card active-content">
-                        <h3>Heat Waves - Stay Safe</h3>
-                        <p class="summary-text">
-                            Heat waves involve prolonged periods of excessively hot weather, often with high humidity. They pose significant health risks, including heat stroke and dehydration.
-                        </p>
-                        <ul class="key-facts">
-                            <li><b>Avoid</b> prolonged sun exposure, especially from 10 AM to 4 PM.</li>
-                            <li><b>Wear</b> light, loose-fitting clothing.</li>
-                            <li><b>Hydrate</b> frequently with water, not sugary drinks.</li>
-                            <li><b>Check</b> on elderly or vulnerable neighbors.</li>
-                        </ul>
-                        <a href="guides.html#heatwaves" class="learn-more-link">Explore More →</a>
-                    </div>
-                    
-                    
-                    <div id="landslides" class="hazard-card">
-                        <h3>Landslides - Warning Signs</h3>
-                        <p class="summary-text">Landslides occur when masses of rock, earth, or debris move down a slope. They are often triggered by heavy rainfall or earthquakes.</p>
-                        <ul class="key-facts">
-                            <li>Look for sudden changes in water flow on slopes.</li>
-                            <li>Notice tilting poles, trees, or fences.</li>
-                            <li>Listen for unusual sounds, like trees cracking or boulders knocking.</li>
-                        </ul>
-                        <a href="guides.html#landslides" class="learn-more-link">Explore More →</a>
-                    </div>
-
-                    <div id="typhoons" class="hazard-card">
-                        <h3>Typhoons - Get your umbrellas!</h3>
-                        <p class="summary-text">Landslides occur when masses of rock, earth, or debris move down a slope. They are often triggered by heavy rainfall or earthquakes.</p>
-                        <ul class="key-facts">
-                            <li>Look for sudden changes in water flow on slopes.</li>
-                            <li>Notice tilting poles, trees, or fences.</li>
-                            <li>Listen for unusual sounds, like trees cracking or boulders knocking.</li>
-                        </ul>
-                        <a href="disasters/typhoon.html" class="learn-more-link">Explore More →</a>
-                    </div>
-                    
-                    <div id="flooding" class="hazard-card">
-                        <h3>Flooding - Be Prepared</h3>
-                        <p class="summary-text">Floods are the most common natural disaster in the Philippines. They can develop slowly or quickly, often due to tropical cyclones and monsoons.</p>
-                        <ul class="key-facts">
-                            <li>Never attempt to walk or drive through floodwaters.</li>
-                            <li>Turn off utilities (gas, electricity) if safe to do so.</li>
-                            <li>Move immediately to higher ground.</li>
-                        </ul>
-                        <a href="guides.html#flooding" class="learn-more-link">Explore More →</a>
-                    </div>
-
-                    <div id="tsunami" class="hazard-card">
-                        <h3>Tsunami - Action Steps</h3>
-                        <p class="summary-text">A tsunami is a series of large waves caused by disturbances like underwater earthquakes, volcanic eruptions, or landslides, posing a severe threat to coastal areas.</p>
-                        <ul class="key-facts">
-                            <li>Move immediately inland to higher ground upon hearing a warning or feeling a strong earthquake.</li>
-                            <li>Know the difference between a warning (actual threat) and a watch (potential threat).</li>
-                            <li>Follow evacuation routes posted for your area.</li>
-                        </ul>
-                        <a href="guides.html#tsunami" class="learn-more-link">Explore More →</a>
-                    </div>
-                    
-                    <div id="volcanic" class="hazard-card">
-                        <h3>Volcanic Activity - What to Do</h3>
-                        <p class="summary-text">Volcanic eruptions can lead to ash fall, pyroclastic flows, and toxic gas release. Residents near active volcanoes must remain vigilant and follow official advisories.</p>
-                        <ul class="key-facts">
-                            <li>Stay indoors with windows and doors closed to avoid ash fall and gas exposure.</li>
-                            <li>Wear goggles and an N95 mask if you must go outside.</li>
-                            <li>Listen to PAGASA and PHIVOLCS for current alert levels.</li>
-                        </ul>
-                        <a href="guides.html#volcanic" class="learn-more-link">Explore More →</a>
-                    </div>
-                    
+                <div class="card">
+                    <h3>Current Conditions</h3>
+                    <ul>
+                        <li><b>Temperature</b>: 31°C (Feels like 36°C)</li>
+                        <li><b>Humidity</b>: 75%</li>
+                        <li><b>Wind</b>: 15 km/h ENE</li>
+                        <li><b>Pressure</b>: 1010 hPa</li>
+                    </ul>
                 </div>
+                
+                <div class="card">
+                    <h3>Forecast & Summary</h3>
+                    <ul>
+                        <li><b>Sky</b>: Partly Cloudy</li>
+                        <li><b>Rain Chances</b>: Low (10%)</li>
+                        <li><b>Sunrise</b>: 5:58 AM</li>
+                        <li><b>Sunset</b>: 5:35 PM</li>
+                    </ul>
+                </div>
+                
             </div>
+        </section>
 
-        </div>
-    </section>
-    
-    <section id="guides" class="content-section full-viewport">
-        <h2>Safety Guides</h2>
-        <div class="content-grid">
-            
-            <div class="card">
-                <h3>Essentials & Documents</h3>
-                <ul>
-                    <li><b>First Aid Kit</b>: Bandages, antiseptic wipes, pain relievers, prescription medicines.</li>
-                    <li><b>Important Documents</b>: Copies of IDs, insurance policies, and essential contacts (stored in a waterproof bag).</li>
-                    <li><b>Cash</b>: Small bills for purchases, as ATMs and electronic payments may be unavailable.</li>
-                    <li><b>Personal Sanitation</b>: Soap, hand sanitizer, feminine hygiene products, toilet paper.</li>
-                    <li><b>Whistle</b>: For signaling help or your location.</li>
-                </ul>
-            </div>
+        <section id="disasters" class="content-section full-viewport">
+            <h2>Hazard Information Center</h2>
 
-            <div class="card">
-                <h3>Food & Water Supply</h3>
-                <ul>
-                    <li><b>Water</b>: One gallon of water per person per day for at least three days (for drinking and sanitation).</li>
-                    <li><b>Non-Perishable Food</b>: Three-day supply of canned food, energy bars, and dried fruit. (Choose items that don't require cooking).</li>
-                    <li><b>Can Opener</b>: Manual can opener for canned goods.</li>
-                    <li><b>Pet Supplies</b>: Food, water, and required medication for pets (if applicable).</li>
-                </ul>
-            </div>
+            <div class="disaster-container">
+                
+                <div class="disaster-nav">
+                    <button class="disaster-btn active" data-hazard="heatwaves">Heat Waves</button>
+                    <button class="disaster-btn" data-hazard="landslides">Landslides</button>
+                    <button class="disaster-btn" data-hazard="typhoons">Typhoons</button>
+                    <button class="disaster-btn" data-hazard="flooding">Flooding</button>
+                    <button class="disaster-btn" data-hazard="tsunami">Tsunami</button>
+                    <button class="disaster-btn" data-hazard="volcanic">Volcanic Activity</button>
+                </div>
 
-            <div class="card">
-                <h3>Communication Devices & Tools</h3>
-                <ul>
-                    <li><b>Flashlight & Extra Batteries</b>: Crucial for power outages.</li>
-                    <li><b>Battery-Powered Radio</b>: To receive official disaster alerts and weather updates.</li>
-                    <li><b>Power Bank & Cables</b>: Fully charged power bank for cell phones.</li>
-                    <li><b>Multi-Tool/Utility Knife</b>: For basic repairs and general use.</li>
-                    <li><b>Duct Tape & Plastic Sheeting</b>: For simple shelter-in-place repairs.</li>
-                </ul>
-            </div>
+                <div class="disaster-display-wrapper">
+                    
+                    <div id="hazard-content">
+                        
+                        <div id="heatwaves" class="hazard-card active-content">
+                            <h3>Heat Waves - Stay Safe</h3>
+                            <p class="summary-text">
+                                Heat waves involve prolonged periods of excessively hot weather, often with high humidity. They pose significant health risks, including heat stroke and dehydration.
+                            </p>
+                            <ul class="key-facts">
+                                <li><b>Avoid</b> prolonged sun exposure, especially from 10 AM to 4 PM.</li>
+                                <li><b>Wear</b> light, loose-fitting clothing.</li>
+                                <li><b>Hydrate</b> frequently with water, not sugary drinks.</li>
+                                <li><b>Check</b> on elderly or vulnerable neighbors.</li>
+                            </ul>
+                            <a href="guides.html#heatwaves" class="learn-more-link">Explore More →</a>
+                        </div>
+                        
+                        
+                        <div id="landslides" class="hazard-card">
+                            <h3>Landslides - Warning Signs</h3>
+                            <p class="summary-text">Landslides occur when masses of rock, earth, or debris move down a slope. They are often triggered by heavy rainfall or earthquakes.</p>
+                            <ul class="key-facts">
+                                <li>Look for sudden changes in water flow on slopes.</li>
+                                <li>Notice tilting poles, trees, or fences.</li>
+                                <li>Listen for unusual sounds, like trees cracking or boulders knocking.</li>
+                            </ul>
+                            <a href="guides.html#landslides" class="learn-more-link">Explore More →</a>
+                        </div>
 
-        </div>
-    </section>
+                        <div id="typhoons" class="hazard-card">
+                            <h3>Typhoons - Get your umbrellas!</h3>
+                            <p class="summary-text">Landslides occur when masses of rock, earth, or debris move down a slope. They are often triggered by heavy rainfall or earthquakes.</p>
+                            <ul class="key-facts">
+                                <li>Look for sudden changes in water flow on slopes.</li>
+                                <li>Notice tilting poles, trees, or fences.</li>
+                                <li>Listen for unusual sounds, like trees cracking or boulders knocking.</li>
+                            </ul>
+                            <a href="disasters/typhoon.html" class="learn-more-link">Explore More →</a>
+                        </div>
+                        
+                        <div id="flooding" class="hazard-card">
+                            <h3>Flooding - Be Prepared</h3>
+                            <p  class="summary-text">Floods are the most common natural disaster in the Philippines. They can develop slowly or quickly, often due to tropical cyclones and monsoons.</p>
+                            <ul class="key-facts">
+                                <li>Never attempt to walk or drive through floodwaters.</li>
+                                <li>Turn off utilities (gas, electricity) if safe to do so.</li>
+                                <li>Move immediately to higher ground.</li>
+                            </ul>
+                            <a href="guides.html#flooding" class="learn-more-link">Explore More →</a>
+                        </div>
 
-
-    <section id="contact" class="content-section full-viewport">
-        <h2>About</h2>
-        <div class="content-grid single-column">
-            <div class="card contact-card">
-                <p>
-                    Terra Spotlight is a Philippine-focused digital platform providing
-                    real-time weather and disaster information. Our mission is to empower
-                    Filipinos with reliable and accessible data.
-                </p>
-
-                <h3 class="our-developers">Our Developers</h3>
-
-                <div class="contact-details">
-                    <div class="card">
-                        <p class="author">Luis Andrei C Gequinto</p>
-                        <p class="role">The Main Programmer</p>
-                    </div>
-                    <div class="card">
-                        <p class="author">Daivik Hernandez</p>
-                        <p class="role">Graphic Designer</p>
-                    </div>
-                    <div class="card">
-                        <p class="author">Ashden Entienza</p>
-                        <p class="role">Content Writer</p>
+                        <div id="tsunami" class="hazard-card">
+                            <h3>Tsunami - Action Steps</h3>
+                            <p class="summary-text">A tsunami is a series of large waves caused by disturbances like underwater earthquakes, volcanic eruptions, or landslides, posing a severe threat to coastal areas.</p>
+                            <ul class="key-facts">
+                                <li>Move immediately inland to higher ground upon hearing a warning or feeling a strong earthquake.</li>
+                                <li>Know the difference between a warning (actual threat) and a watch (potential threat).</li>
+                                <li>Follow evacuation routes posted for your area.</li>
+                            </ul>
+                            <a href="guides.html#tsunami" class="learn-more-link">Explore More →</a>
+                        </div>
+                        
+                        <div id="volcanic" class="hazard-card">
+                            <h3>Volcanic Activity - What to Do</h3>
+                            <p class="summary-text">Volcanic eruptions can lead to ash fall, pyroclastic flows, and toxic gas release. Residents near active volcanoes must remain vigilant and follow official advisories.</p>
+                            <ul class="key-facts">
+                                <li>Stay indoors with windows and doors closed to avoid ash fall and gas exposure.</li>
+                                <li>Wear goggles and an N95 mask if you must go outside.</li>
+                                <li>Listen to PAGASA and PHIVOLCS for current alert levels.</li>
+                            </ul>
+                            <a href="guides.html#volcanic" class="learn-more-link">Explore More →</a>
+                        </div>
+                        
                     </div>
                 </div>
+
             </div>
-        </div>
+        </section>
+        
+        <section id="guides" class="content-section full-viewport">
+            <h2>Safety Guides</h2>
+            <div class="content-grid">
+                
+                <div class="card">
+                    <h3>Essentials</h3>
+                    <ul>
+                        <li><b>First Aid Kit</b>: Bandages, antiseptic wipes, pain relievers, prescription medicines.</li>
+                        <li><b>Important Documents</b>: Copies of IDs, insurance policies, and essential contacts (stored in a waterproof bag).</li>
+                        <li><b>Cash</b>: Small bills for purchases, as ATMs and electronic payments may be unavailable.</li>
+                        <li><b>Personal Sanitation</b>: Soap, hand sanitizer, feminine hygiene products, toilet paper.</li>
+                        <li><b>Whistle</b>: For signaling help or your location.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Food & Water Supply</h3>
+                    <ul>
+                        <li><b>Water</b>: One gallon of water per person per day for at least three days (for drinking and sanitation).</li>
+                        <li><b>Non-Perishable Food</b>: Three-day supply of canned food, energy bars, and dried fruit. (Choose items that don't require cooking).</li>
+                        <li><b>Can Opener</b>: Manual can opener for canned goods.</li>
+                        <li><b>Pet Supplies</b>: Food, water, and required medication for pets (if applicable).</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Communication Devices & Tools</h3>
+                    <ul>
+                        <li><b>Flashlight & Extra Batteries</b>: Crucial for power outages.</li>
+                        <li><b>Battery-Powered Radio</b>: To receive official disaster alerts and weather updates.</li>
+                        <li><b>Power Bank & Cables</b>: Fully charged power bank for cell phones.</li>
+                        <li><b>Multi-Tool/Utility Knife</b>: For basic repairs and general use.</li>
+                        <li><b>Duct Tape & Plastic Sheeting</b>: For simple shelter-in-place repairs.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="about" class="content-section full-viewport">
+            <h2>About</h2>
+            <div class="content-grid single-column">
+                <div class="card contact-card">
+                    <p>
+                        Terra Spotlight is a Philippine-focused digital platform providing
+                        real-time weather and disaster information. Our mission is to empower
+                        Filipinos with reliable and accessible data.
+                    </p>
+
+                    <h3 class="our-developers">Our Developers</h3>
+
+                    <div class="contact-details">
+                        <div class="card">
+                            <p class="author">Luis Andrei C Gequinto</p>
+                            <p class="role">Programmer</p>
+                        </div>
+                        <div class="card">
+                            <p class="author">Daivik Hernandez</p>
+                            <p class="role">Graphic Designer & Programmer</p>
+                        </div>
+                        <div class="card">
+                            <p class="author">Ashden Entienza</p>
+                            <p class="role">Content Writer & Research Analyst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Terra Spotlight. All rights reserved.</p>
+        </footer>
     </section>
-</section>
-    <footer>
-        <p>&copy; 2025 Terra Spotlight. All rights reserved.</p>
-    </footer>
 
 
     <script src="app.js"></script>

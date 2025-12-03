@@ -567,9 +567,10 @@ body{
 */
 
 footer {
-    width: 100%;
+    position: relative;
+    width: 100vw;
     padding: 20px;
-    background-color: var(--bg-dark-B);
+    background-color: var(--bg-dark-A);
     text-align: center;
     font-size: 0.9em;
     color: var(--text-muted);
