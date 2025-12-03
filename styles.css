@@ -75,6 +75,8 @@
     /* Borders and Shadows (Must also be light/subtle) */
     --border-dark: #E2E8F0; /* Very light border */
     --shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for lift */
+
+    --text-glow-color: black;
 }
 
 * {
@@ -304,7 +306,10 @@ body{
     outline-style: solid;
 }
 
-
+#windy-com {
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+}
 
 /* CONTENT SECTIONS GENERAL STYLES */
 .content-section {
@@ -336,18 +341,17 @@ body{
 
 #guides .card li {
     /* Ensure the list item text color is the target for the shadow */
-    color: var(--text-light); 
+    color: var(--text-dark); 
     transform: translateX(0);
     transition: text-shadow 0.2s ease, color 0.2s ease, transform 0.3s ease;
 }
 
 #guides .card li:hover {
     /* 1. Makes the text bright white for maximum contrast */
-    color: #ffffff; 
+    /* color: var();  */
     
     /* 2. Applies the soft, accent green glow using text-shadow */
-    text-shadow: 0 0 5px var(--text-glow-color),
-                 0 0 10px rgba(72, 187, 120, 0.4); /* Second layer for a wider halo */
+    text-shadow: 0 0 15px var(--text-glow-color);
     
     /* Optional: Slight lift or movement for tactile feel */
     transform: translateX(7px);
@@ -420,6 +424,20 @@ body{
     text-align: center;
     margin-top: 30px;
 }
+
+.developer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dev Pics */
+.developer-pic {
+    width: 100px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0);
+    border-radius: 10px;
+}
+
 
 /*
 ====================================
@@ -505,7 +523,6 @@ body{
     }
 }
 
-
 /* --- Disaster Content Display --- */
 .disaster-display-wrapper {
     flex-grow: 1;
@@ -531,6 +548,11 @@ body{
     color: var(--text-muted);
     margin-bottom: 20px;
     font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.summary-text:hover {
+    color: var(--text-dark);
 }
 
 .key-facts {
@@ -648,18 +670,9 @@ footer {
 
 /*
 ====================================
-7. TYPHOON GUIDE SPECIFIC STYLES
+7. HAZARDS SPECIFIC STYLES
 ====================================
 */
-
-/* Ensure the full-viewport centering is disabled for detailed content pages */
-#typhoon-guide {
-    /* Reset full-viewport properties for content page */
-    min-height: auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    display: block; /* Use standard block flow */
-}
 
 /* Three-column layout for the Before/During/After phases */
 .action-phases-grid {
@@ -706,6 +719,52 @@ footer {
     left: 0;
     top: 5px;
 }
+
+.back-to-hazard {
+    margin-top: 20px;
+}
+
+/* Volcanic Activity Specific */
+
+.info-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--bg-card); /* Card background adapts to light/dark mode */
+    color: var(--text-light);          /* Text color */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.info-table th,
+.info-table td {
+    padding: 12px 20px;
+    text-align: left;
+}
+
+.info-table th {
+    background-color: var(--bg-dark-A); /* Header background */
+    color: var(--primary-color);         /* Accent header text */
+    font-size: 1.05em;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.info-table tr:nth-child(even) {
+    background-color: var(--bg-dark-B); /* Alternating row color */
+}
+
+.info-table tr:hover {
+    background-color: var(--accent-color); /* Hover effect */
+    color: var(--text-light);              /* Ensure text stays readable */
+}
+
+.info-table td strong {
+    color: var(--text-light); /* Highlighted text */
+}
+
 
 
 /* Media query for mobile stacking */
