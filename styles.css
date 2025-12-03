@@ -715,3 +715,41 @@ footer {
         gap: 40px;
     }
 }
+
+/* Live Pill */
+
+/*
+====================================
+LIVE PILL BADGE CSS
+====================================
+*/
+
+.live-pill {
+    display: inline;
+    padding: 2px 8px;
+    margin-left: 10px;
+    border-radius: 100px;
+    background-color: var(--primary-color); 
+    color: var(--bg-dark-A);
+    font-size: 0.75em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: livePulse 2s infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes livePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7); /* Start with full color */
+    }
+    70% {
+        box-shadow: 0 0 0 5px rgba(72, 187, 120, 0); /* Expand shadow outwards */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0); /* Reset (often omitted if 70% is enough) */
+    }
+}
