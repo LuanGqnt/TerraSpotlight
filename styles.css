@@ -29,6 +29,22 @@
   100% {opacity: 0.1;}
 }
 
+@keyframes greetingFade {
+    0%   { opacity: 0; transform: translateY(-20px); }
+    20%  { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes greetingFadeEnd {
+    0%   { opacity: 0; transform: translateY(-20px); }
+    20%  { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(-50); }
+    95% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 /*
 ====================================
 1. GLOBAL STYLES & ALTERNATING COLORS
@@ -52,8 +68,10 @@
     --shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.4);
     --border-radius: 8px;
 
-    --text-glow-color: #f2f2f2; /* Primary green for text light-up */
+    --text-glow-color: #f5e5fc; /* Primary green for text light-up */
     --SeperatorLine: #8700d4;
+
+    --backgroundColorBody: #0a0016;
 }
 
 .light-mode {
@@ -76,6 +94,9 @@
     /* Borders and Shadows (Must also be light/subtle) */
     --border-dark: #E2E8F0; /* Very light border */
     --shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for lift */
+
+    --text-glow-color: rgb(24, 0, 41);
+    --backgroundColorBody: #10051a;
 }
 
 * {
@@ -141,10 +162,24 @@ a:hover {
   transform: translateY(-100%);
 }
 
+.logoContainer {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
 .logo {
+    display: inline-block;
     font-size: 1.5em;
     font-weight: 700;
     color: var(--primary-color);
+}
+
+.logoPH {
+    font-size: 0.75em;
+    font-weight: 350;
+    color: var(--primary-color);
+    opacity: 0.5;
 }
 
 #top-nav ul {
@@ -191,8 +226,8 @@ a:hover {
     padding: 100px 40px 40px; 
     text-align: center;
     position: relative;
-    background-color: #0a0016;
-    color: #0a0016;
+    background-color: var(--backgroundColorBody);
+    color: var(--backgroundColorBody);
 }
 
 /* Apply Alternating Backgrounds */
@@ -232,12 +267,12 @@ a:hover {
 
 /* --- 2. Landing Content Styles --- */
 body{
-    background-color: #0a0016;
+    background-color: var(--backgroundColorBody);
 }
 
 #globeAnimDiv{
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 0;
@@ -298,6 +333,7 @@ body{
   z-index: -7;
 }
 
+
 #spotlightDiv{
     position: fixed;
     top: 20%;
@@ -309,7 +345,85 @@ body{
     align-items: center;
 }
 
-/* CUNT-ENT SECTIONS SEMI(?)-PARALAX []*/ /*Delete the cuss word I'm losing my sanity*/
+#textLayer{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#greetingTexts {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    width: 50%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#greetingTexts > div {
+    position: absolute;       
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 6em;
+    font-weight: 700;
+    color: #e5cdf0;
+    opacity: 0;
+    animation: greetingFade forwards;
+    text-shadow:
+        -4px -4px 0 var(--backgroundColorBody),
+         4px -4px 0 var(--backgroundColorBody),
+        -4px  4px 0 var(--backgroundColorBody),
+         4px  4px 0 var(--backgroundColorBody);
+}
+
+#greetingTexts > div:nth-child(1) { animation-delay: 0s; animation-duration: 3.1s; }
+#greetingTexts > div:nth-child(2) { animation-delay: 2.75s; animation-duration: 1.5s; }
+#greetingTexts > div:nth-child(3) { animation-delay: 4s; animation-duration: 1s;}
+#greetingTexts > div:nth-child(4) { animation-delay: 4.85s; animation-duration: 0.75s;}
+#greetingTexts > div:nth-child(5) { animation-delay: 5.5s; animation-duration: 0.75s;}
+#greetingTexts > div:nth-child(6) { animation-delay: 6.15s; animation-duration: 0.75s;}
+#greetingTexts > div:nth-child(7) { animation-delay: 6.7s; animation-duration: 1s;}
+#greetingTexts > div:nth-child(8) { animation-delay: 7.55s; animation-duration: 1.5s;}
+#greetingTexts > div:nth-child(9) { animation-name: greetingFadeEnd; animation-delay: 8.8s; animation-duration: 2s;}
+
+#smallSiteDesc{
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    font-weight: 400;
+    width: 50%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    color: #e5cdf0;
+    opacity: 0;
+    animation-delay: 8.5s;
+    transition: ease-in-out;
+    animation-name: bGTransparency;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    text-shadow:
+        -1px -1px 0 var(--backgroundColorBody),
+         1px -1px 0 var(--backgroundColorBody),
+        -1px  1px 0 var(--backgroundColorBody),
+         1px  1px 0 var(--backgroundColorBody);
+}
 
 #weather{
     outline: var(--SeperatorLine);
@@ -317,7 +431,10 @@ body{
     outline-style: solid;
 }
 
-
+#windy-com {
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+}
 
 /* CONTENT SECTIONS GENERAL STYLES */
 .content-section {
@@ -349,18 +466,17 @@ body{
 
 #guides .card li {
     /* Ensure the list item text color is the target for the shadow */
-    color: var(--text-light); 
+    color: var(--text-dark); 
     transform: translateX(0);
     transition: text-shadow 0.2s ease, color 0.2s ease, transform 0.3s ease;
 }
 
 #guides .card li:hover {
     /* 1. Makes the text bright white for maximum contrast */
-    color: #ffffff; 
+    /* color: var();  */
     
     /* 2. Applies the soft, accent green glow using text-shadow */
-    text-shadow: 0 0 5px var(--text-glow-color),
-                 0 0 10px rgba(72, 187, 120, 0.4); /* Second layer for a wider halo */
+    text-shadow: 0 0 15px var(--text-glow-color);
     
     /* Optional: Slight lift or movement for tactile feel */
     transform: translateX(7px);
@@ -433,6 +549,20 @@ body{
     text-align: center;
     margin-top: 30px;
 }
+
+.developer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dev Pics */
+.developer-pic {
+    width: 100px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0);
+    border-radius: 10px;
+}
+
 
 /*
 ====================================
@@ -518,7 +648,6 @@ body{
     }
 }
 
-
 /* --- Disaster Content Display --- */
 .disaster-display-wrapper {
     flex-grow: 1;
@@ -544,6 +673,11 @@ body{
     color: var(--text-muted);
     margin-bottom: 20px;
     font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.summary-text:hover {
+    color: var(--text-dark);
 }
 
 .key-facts {
@@ -661,18 +795,9 @@ footer {
 
 /*
 ====================================
-7. TYPHOON GUIDE SPECIFIC STYLES
+7. HAZARDS SPECIFIC STYLES
 ====================================
 */
-
-/* Ensure the full-viewport centering is disabled for detailed content pages */
-#typhoon-guide {
-    /* Reset full-viewport properties for content page */
-    min-height: auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    display: block; /* Use standard block flow */
-}
 
 /* Three-column layout for the Before/During/After phases */
 .action-phases-grid {
@@ -719,6 +844,52 @@ footer {
     left: 0;
     top: 5px;
 }
+
+.back-to-hazard {
+    margin-top: 20px;
+}
+
+/* Volcanic Activity Specific */
+
+.info-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--bg-card); /* Card background adapts to light/dark mode */
+    color: var(--text-light);          /* Text color */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.info-table th,
+.info-table td {
+    padding: 12px 20px;
+    text-align: left;
+}
+
+.info-table th {
+    background-color: var(--bg-dark-A); /* Header background */
+    color: var(--primary-color);         /* Accent header text */
+    font-size: 1.05em;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.info-table tr:nth-child(even) {
+    background-color: var(--bg-dark-B); /* Alternating row color */
+}
+
+.info-table tr:hover {
+    background-color: var(--accent-color); /* Hover effect */
+    color: var(--text-light);              /* Ensure text stays readable */
+}
+
+.info-table td strong {
+    color: var(--text-light); /* Highlighted text */
+}
+
 
 
 /* Media query for mobile stacking */
