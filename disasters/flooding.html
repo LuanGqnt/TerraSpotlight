@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flooding Safety Guide - Terra Spotlight</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css"> 
 </head>
 <body>
 
@@ -17,13 +17,24 @@
     <nav id="top-nav">
         <span class="logo">Terra Spotlight</span>
         <ul>
-            <li><a href="index.html#landing-page">Home</a></li>
-            <li><a href="index.html#weather">Weather</a></li>
-            <li><a href="index.html#disasters">Alerts</a></li>
-            <li><a href="index.html#guides">Safety</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="heatwave.html">Heat Waves</a></li>
+            <li><a href="landslide.html">Landslides</a></li>
+            <li><a href="typhoon.html">Typhoons</a></li>
+            <li><a href="flooding.html#flooding-guide">Flooding</a></li>
+            <li><a href="tsunami.html">Tsunami</a></li>
+            <li><a href="volcanic_activity.html">Volcanic Activity</a></li>
         </ul>
     </nav>
+
+    <div id="colorLayerDiv">
+        <img id="colorLayer" src="../assets/floodingLowestImageBG.png">
+    </div>
+    <div id="videobgDiv">
+        <video id="videobg" height="100vh" width="100vw" autoplay loop muted>
+            <source src="assets/starsBGFar.webm" type="video/webm">
+        </video>
+    </div>
 
     <section id="flooding-guide" class="content-section full-viewport">
 
@@ -100,5 +111,6 @@
     </footer>
 
     <script src="../lightmode.js"></script>
+    <script src="../hoverNavi.js"></script>
 </body>
 </html>

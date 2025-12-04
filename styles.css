@@ -72,18 +72,19 @@
     --SeperatorLine: #8700d4;
 
     --backgroundColorBody: #0a0016;
+    --backgroundColorBodyDisasterVer: #0a0016;
 }
 
 .light-mode {
     /* Accent Colors (Keep Primary/Accent the same deep green for consistency) */
-    --primary-color: #a195e5;
-    --accent-color: #a195e5; 
+    --primary-color: #bdbcf3;
+    --accent-color: #bdbcf3; 
     
     /* Alternating Backgrounds */
     --bg-dark-A: var(--bg-light-A); /* Now used for odd sections */
     --bg-dark-B: var(--bg-light-B); /* Now used for even sections */
-    --bg-light-A: #f5e7f8;
-    --bg-light-B: #fbeeff;
+    --bg-light-A: #fdf7ff;
+    --bg-light-B: #ffffff;
 
     /* General Colors */
     --bg-card: #f4e8fa; /* Pure white cards */
@@ -97,6 +98,7 @@
 
     --text-glow-color: rgb(24, 0, 41);
     --backgroundColorBody: #10051a;
+    --backgroundColorBodyDisasterVer: #fdf7ff;
 }
 
 * {
@@ -154,6 +156,31 @@ a:hover {
 }
 
 /* Show nav */
+
+#hazardsTabContents {
+  position: fixed; /* dropdown below nav */
+  top: 100%; /* right below the nav */
+  right: 150px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  min-width: 200px;
+  z-index: 999;
+  transition: transform 0.4s ease;
+}
+
+#hazardsTabContents a {
+  padding: 8px 20px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+#hazardsTabContents a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
 #top-nav.visible {
   transform: translateY(0);
 }
@@ -219,6 +246,7 @@ a:hover {
 
 .fullViewportLandingVer {
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     flex-direction: column; /* Default stack, overridden for landing */
     justify-content: center;
@@ -462,6 +490,64 @@ body{
     max-width: 700px;
 }
 
+@keyframes bGTransparencyDisasterVer{
+  0% {opacity: 0;}
+  100% {opacity: 0.05;}
+}
+
+#colorLayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.5); 
+    opacity: 0;
+    animation-name: bGTransparencyDisasterVer;
+    animation-delay: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: -10;
+    pointer-events: none;
+}
+
+#colorLayerDiv{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#videobgDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation-name: bGTransparency;
+  animation-delay: 0.5s;
+  animation-duration: 5s;
+  width: 100vw;
+  opacity: 0;
+  height: 100vh;
+  object-fit: cover;
+  animation-fill-mode: forwards;
+  z-index: -11;
+}
+
+#flooding-guide {background: none}
+#heatwave-guide {background: none}
+#landslide-guide {background: none}
+#tsunami-guide {background: none}
+#typhoon-guide {background: none}
+#volcanic-guide {background: none}
+
+body{
+  background-color: var(--backgroundColorBodyDisasterVer);
+}
+
 /* Guides */
 
 #guides .card li {
@@ -649,6 +735,25 @@ body{
 }
 
 /* --- Disaster Content Display --- */
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: var(--bg-dark-A); 
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, transform 0.2s;
+
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
 .disaster-display-wrapper {
     flex-grow: 1;
     padding: 10px;
@@ -721,6 +826,7 @@ footer {
     text-align: center;
     font-size: 0.9em;
     color: var(--text-muted);
+    z-index: 6767;
 }
 
 
@@ -770,7 +876,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 3;
+    z-index: 999999999999999;
 }
 
 #theme-switch:hover {

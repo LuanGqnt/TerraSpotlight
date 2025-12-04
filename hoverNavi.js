@@ -1,17 +1,45 @@
 let lastScroll = 0;
-const nav = document.getElementById('top-nav');
+let lastMouseY = window.innerHeight;
+let hideTimeout = null;
+let hideTimeoutHazard = null;
 
+const nav = document.getElementById('top-nav');
+const hazard = document.getElementById('hazardID');
+
+function showHazards() {
+  hazard.classList.remove('hidden');
+  hazard.classList.add('visible');
+
+  // Reset hide timer
+  if (hideTimeoutHazard) clearTimeout(hideTimeoutHazard);
+
+  hideTimeoutHazard = setTimeout(() => {
+    hazard.classList.remove('visible');
+    hazard.classList.add('hidden');
+  }, 10000);
+}
+
+function showNav() {
+  nav.classList.remove('hidden');
+  nav.classList.add('visible');
+
+  // Reset hide timer
+  if (hideTimeout) clearTimeout(hideTimeout);
+
+  hideTimeout = setTimeout(() => {
+    nav.classList.remove('visible');
+    nav.classList.add('hidden');
+  }, 10000);
+}
+
+// Scroll logic
 window.addEventListener('scroll', () => {
   const currentScroll = window.scrollY;
 
-  if (currentScroll < 20) {
-    // Always show near top
-    nav.classList.remove('hidden');
-    nav.classList.add('visible');
+  if (currentScroll < 30) {
+    showNav();
   } else if (currentScroll < lastScroll) {
-    // Scrolling up
-    nav.classList.remove('hidden');
-    nav.classList.add('visible');
+    showNav();
   } else {
     nav.classList.remove('visible');
     nav.classList.add('hidden');
@@ -20,9 +48,15 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
-// Show nav when mouse is near top
+// Mouse approaching the top
 window.addEventListener('mousemove', (e) => {
-  if (e.clientY < 20) {
-    nav.classList.add('visible');
+  const triggerZone = 105;
+  const movingUpward = e.clientY < lastMouseY;
+  const insideTriggerZone = e.clientY < triggerZone;
+
+  if (movingUpward && insideTriggerZone) {
+    showNav();
   }
+
+  lastMouseY = e.clientY;
 });
