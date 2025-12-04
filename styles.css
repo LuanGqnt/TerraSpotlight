@@ -236,20 +236,23 @@ body{
 }
 
 #globeAnimDiv{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    align-items: center;
+}
 
-  align-items: center;
-  position: relative;
-  animation-name: globeAnimKey;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-  animation-fill-mode: forwards;
-  position: absolute;     
-  top: 50%;            
-  left: 50%;    
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: -8;
+#globeAnim{
+    animation-name: globeAnimKey;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    animation-fill-mode: forwards;
+    z-index: -8;
 }
 
 #starsBGSmallDiv{
@@ -259,18 +262,21 @@ body{
   z-index: -9;
 }
 
-#novaBG{
-    scale: 1.5;
+#novaBG {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.5); 
     opacity: 0;
     animation-name: bGTransparencyNovaVer;
-    animation-delay: 1;
-    animation-duration: 1;
-    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
     z-index: -10;
+    pointer-events: none;
 }
 
 #starsBGSmall {
@@ -287,14 +293,20 @@ body{
 
 
 #spotlight{
-  overflow-x: hidden;
-  position: absolute;
-  left: 50%;
-  top: 0%;
-  transform: translateX(-50%);
   opacity: 0;
   animation: spotlightAnim 1s ease-in-out 1s 1 forwards;
   z-index: -7;
+}
+
+#spotlightDiv{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    align-items: center;
 }
 
 /* CUNT-ENT SECTIONS SEMI(?)-PARALAX []*/ /*Delete the cuss word I'm losing my sanity*/
@@ -417,7 +429,7 @@ body{
 
 .our-developers {
     font-size: 2em !important;
-    color: var(--text-light) !important; /*--------------------------------------------------------------------------------------------------------------------*/
+    color: var(--text-light) !important;
     text-align: center;
     margin-top: 30px;
 }

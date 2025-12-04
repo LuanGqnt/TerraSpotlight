@@ -1,6 +1,6 @@
 
 const Layer1 = document.getElementById("spotlightDiv");
-const Layer2 = document.getElementById("globeAnim");
+const Layer2 = document.getElementById("globeAnimDiv");
 const Layer3 = document.getElementById("starsBGSmallDiv");
 const Layer4 = document.getElementById("novaBG");
 
