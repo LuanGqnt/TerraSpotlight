@@ -512,17 +512,17 @@ body{
     pointer-events: none;
 }
 
-#colorLayerDiv{
+#colorLayer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     pointer-events: none;
 }
 
-#videobgDiv {
+#videobg {
   position: fixed;
   top: 0;
   left: 0;
@@ -949,10 +949,6 @@ footer {
     position: absolute;
     left: 0;
     top: 5px;
-}
-
-.back-to-hazard {
-    margin-top: 20px;
 }
 
 /* Volcanic Activity Specific */
