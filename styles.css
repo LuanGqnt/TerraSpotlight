@@ -1099,11 +1099,6 @@ LIVE PILL BADGE CSS
     transition: 0.25s ease;
 }
 
-.newsletter-btn:hover {
-    background: #73c2ff;
-    box-shadow: 0 0 12px rgba(78,168,255,0.35);
-}
-
 /* Responsive */
 @media (max-width: 600px) {
     .newsletter-title {
@@ -1113,4 +1108,19 @@ LIVE PILL BADGE CSS
     .newsletter-card {
         padding: 30px;
     }
+}
+
+.thank-text {
+    color: var(--text-muted);
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.thank-subtext {
+    color: var(--text-soft);
+    margin: 1rem 0 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
 }
