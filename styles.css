@@ -156,27 +156,6 @@ a:hover {
 }
 
 /* Show nav */
-
-#hazardsTabContents {
-  position: fixed; /* dropdown below nav */
-  top: 100%; /* right below the nav */
-  right: 150px;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0;
-  min-width: 200px;
-  z-index: 999;
-  transition: transform 0.4s ease;
-}
-
-#hazardsTabContents a {
-  padding: 8px 20px;
-  text-decoration: none;
-  color: white;
-  display: block;
-}
-
 #hazardsTabContents a:hover {
   background: rgba(255,255,255,0.1);
 }
@@ -512,17 +491,17 @@ body{
     pointer-events: none;
 }
 
-#colorLayer {
+#colorLayerDiv{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
 }
 
-#videobg {
+#videobgDiv {
   position: fixed;
   top: 0;
   left: 0;
@@ -949,6 +928,10 @@ footer {
     position: absolute;
     left: 0;
     top: 5px;
+}
+
+.back-to-hazard {
+    margin-top: 20px;
 }
 
 /* Volcanic Activity Specific */
