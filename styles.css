@@ -1022,3 +1022,105 @@ LIVE PILL BADGE CSS
         box-shadow: 0 0 0 0 rgba(72, 187, 120, 0); /* Reset (often omitted if 70% is enough) */
     }
 }
+
+/* Form */
+
+/* NEWSLETTER SECTION — Terra Spotlight Style */
+.newsletter-section {
+    min-height: 100vh;
+    background: #1b1f27;               /* same as your site */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.newsletter-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(78, 168, 255, 0.15);
+}
+
+/* Card */
+
+.newsletter-card {
+    width: 100%;
+    padding: 40px 45px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.newsletter-card h2 {
+    margin: 0 0 25px 0;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.newsletter-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.newsletter-card input[type="email"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: var(--bg-dark-A);
+    color: var(--text-dark);
+    font-size: 1rem;
+    border: 1px solid #3a4150;
+    transition: 0.25s ease;
+}
+
+.newsletter-card input[type="email"]:focus {
+    border-color: #4ea8ff;
+    box-shadow: 0 0 8px rgba(78,168,255,0.25);
+}
+
+.newsletter-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent-color);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .newsletter-title {
+        font-size: 2.2rem;
+    }
+
+    .newsletter-card {
+        padding: 30px;
+    }
+}
+
+.thank-text {
+    color: var(--text-muted);
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.thank-subtext {
+    color: var(--text-soft);
+    margin: 1rem 0 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
